@@ -2,7 +2,7 @@
 <AutomatedInstallation langpack="eng">
 <com.izforge.izpack.panels.HelloPanel id="UNKNOWN (com.izforge.izpack.panels.HelloPanel)"/>
 <com.izforge.izpack.panels.TargetPanel id="UNKNOWN (com.izforge.izpack.panels.TargetPanel)">
-<installpath>C:\Users\arnaud\perso\OSE\Wizard\target\install</installpath>
+<installpath>${project.build.directory}\install</installpath>
 </com.izforge.izpack.panels.TargetPanel>
 <com.izforge.izpack.panels.InstallPanel id="UNKNOWN (com.izforge.izpack.panels.InstallPanel)"/>
 <com.izforge.izpack.panels.FinishPanel id="UNKNOWN (com.izforge.izpack.panels.FinishPanel)"/>
