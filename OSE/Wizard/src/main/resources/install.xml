@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <installation version="1.0">
-
     <info>
         <appname>Wizard of OSE</appname>
         <appversion>1.0.0</appversion>
@@ -8,25 +7,21 @@
         <javaversion>1.6</javaversion>
         <pack200 />
     </info>
-
     <guiprefs resizable="no" width="480" height="360">
         <laf name="looks">
             <param name="variant" value="windows" />
             <os family="windows" />
         </laf>
     </guiprefs>
-
     <locale>
         <langpack iso3="eng" />
     </locale>
-
     <panels>
         <panel classname="HelloPanel" />
         <panel classname="TargetPanel" />
         <panel classname="InstallPanel" />
         <panel classname="FinishPanel" />
     </panels>
-
     <packs>
         <pack name="skeleton" required="yes" id="OSE">
             <description>OSGI skeleton</description>
@@ -41,7 +36,6 @@
             <!-- Bundle  Launcher -->
             <file targetdir="$INSTALL_PATH/system/launcher" src="${dependencies.dir}/BundleLauncher-1.1.0-SNAPSHOT.jar" />
         </pack>
-
         <pack name="dependencies" required="yes" parent="OSE">
             <description>Mics Dependencies</description>
             <!-- Dependencies 6 -->
@@ -55,11 +49,9 @@
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.apache.commons.pool-1.5.3.jar" />
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.apache.commons.beanutils-1.8.0.jar" />
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.aopalliance-1.0.0.jar" />
-            <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.junit-3.8.2.jar" />         
+            <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.junit-3.8.2.jar" />
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.net.sf.cglib-2.2.0.jar" />
             <!-- Dependencies 7 -->
-
-
         </pack>
         <pack name="Spring" required="yes" parent="OSE">
             <description>Spring Bundles</description>
@@ -71,9 +63,7 @@
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.test-${spring.framework.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.expression-${spring.framework.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.web-${spring.framework.version}.jar" />
-
         </pack>
-
         <pack name="Jetty" required="yes" parent="OSE">
             <description>Jetty Bundles</description>
             <file targetdir="$INSTALL_PATH/system/jetty" src="${dependencies.dir}/com.springsource.org.mortbay.jetty.server-${jetty.version}.jar" />
@@ -81,7 +71,6 @@
             <file targetdir="$INSTALL_PATH/system/jetty" src="${dependencies.dir}/jetty.web.extender.fragment.osgi-1.0.1.jar" />
             <file targetdir="$INSTALL_PATH/system/jetty/start" src="${dependencies.dir}/jetty.start.osgi-${jetty.run.version}.jar" />
         </pack>
-
         <pack name="Extenders" required="yes" parent="OSE">
             <description>Spring OSGI Extenders</description>
             <file targetdir="$INSTALL_PATH/system/spring/start" src="${dependencies.dir}/org.springframework.osgi.extender-${spring.extender.version}.jar" />
@@ -93,7 +82,6 @@
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.osgi.test-${spring.extender.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.osgi.web-${spring.extender.version}.jar" />
         </pack>
-
         <pack name="Test" required="yes" parent="OSE">
             <description>Just a Test</description>
             <file targetdir="$INSTALL_PATH/system/test" src="${dependencies.dir}/TestSpringBundle-1.0-SNAPSHOT.jar" />
@@ -101,8 +89,6 @@
                      dir="${dependencies.dir}"
                      includes="*.war" />
         </pack>
-
-
     </packs>
 
 </installation>
