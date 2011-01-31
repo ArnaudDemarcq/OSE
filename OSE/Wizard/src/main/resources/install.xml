@@ -3,10 +3,9 @@
 
     <info>
         <appname>Wizard of OSE</appname>
-        <appversion>1</appversion>
+        <appversion>1.0.0</appversion>
         <uninstaller write="no" />
         <javaversion>1.6</javaversion>
-
         <pack200 />
     </info>
 
@@ -44,12 +43,11 @@
         </pack>
 
         <pack name="dependencies" required="yes" parent="OSE">
-            <description>Various Dependencies</description>
+            <description>Mics Dependencies</description>
             <!-- Dependencies 6 -->
             <fileset targetdir="$INSTALL_PATH/system/dependencies/javax"
                      dir="${dependencies.dir}"
-                     includes="com.springsource.javax.*.jar"
-                     />
+                     includes="com.springsource.javax.*.jar" />
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.antlr-3.1.3.jar" />
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.apache.commons.collections-3.2.1.jar" />
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.apache.commons.lang-2.5.0.jar" />
@@ -57,9 +55,8 @@
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.apache.commons.pool-1.5.3.jar" />
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.apache.commons.beanutils-1.8.0.jar" />
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.org.aopalliance-1.0.0.jar" />
-            <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.junit-3.8.2.jar" />
-
-
+            <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.junit-3.8.2.jar" />         
+            <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.net.sf.cglib-2.2.0.jar" />
             <!-- Dependencies 7 -->
 
 
@@ -73,17 +70,22 @@
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.context-${spring.framework.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.test-${spring.framework.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.expression-${spring.framework.version}.jar" />
-           
+            <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.web-${spring.framework.version}.jar" />
+
         </pack>
 
-        <pack name="Jetty" required="yes">
+        <pack name="Jetty" required="yes" parent="OSE">
             <description>Jetty Bundles</description>
+            <file targetdir="$INSTALL_PATH/system/jetty" src="${dependencies.dir}/com.springsource.org.mortbay.jetty.server-${jetty.version}.jar" />
+            <file targetdir="$INSTALL_PATH/system/jetty" src="${dependencies.dir}/com.springsource.org.mortbay.util-${jetty.version}.jar" />
+            <file targetdir="$INSTALL_PATH/system/jetty" src="${dependencies.dir}/jetty.web.extender.fragment.osgi-1.0.1.jar" />
+            <file targetdir="$INSTALL_PATH/system/jetty/start" src="${dependencies.dir}/jetty.start.osgi-${jetty.run.version}.jar" />
         </pack>
 
         <pack name="Extenders" required="yes" parent="OSE">
             <description>Spring OSGI Extenders</description>
             <file targetdir="$INSTALL_PATH/system/spring/start" src="${dependencies.dir}/org.springframework.osgi.extender-${spring.extender.version}.jar" />
-            <!--      <file targetdir="$INSTALL_PATH/system/spring/start" src="${dependencies.dir}/org.springframework.osgi.web.extender-${spring.extender.version}.jar" />  -->
+            <file targetdir="$INSTALL_PATH/system/spring/start" src="${dependencies.dir}/org.springframework.osgi.web.extender-${spring.extender.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.osgi.core-${spring.extender.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.osgi.io-${spring.extender.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.osgi.mock-${spring.extender.version}.jar" />
@@ -95,6 +97,9 @@
         <pack name="Test" required="yes" parent="OSE">
             <description>Just a Test</description>
             <file targetdir="$INSTALL_PATH/system/test" src="${dependencies.dir}/TestSpringBundle-1.0-SNAPSHOT.jar" />
+            <fileset targetdir="$INSTALL_PATH/system/test"
+                     dir="${dependencies.dir}"
+                     includes="*.war" />
         </pack>
 
 
