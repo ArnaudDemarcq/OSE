@@ -5,6 +5,8 @@
         <appversion>1.0.0</appversion>
         <uninstaller write="no" />
         <javaversion>1.6</javaversion>
+        <webdir>http://none.empty</webdir>
+
         <pack200 />
     </info>
     <guiprefs resizable="no" width="480" height="360">
