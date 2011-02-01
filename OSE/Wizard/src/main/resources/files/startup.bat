@@ -2,7 +2,6 @@
 
 set OSGI_IMPL=org.eclipse.osgi-3.6.0.v20100517.jar
 set OSE_HOME=.
-REM set OSGI_IMPL=org.eclipse.osgi_3.4.3.R34x_v20081215-1030.jar
 java   ^
 		-Djetty.home="%OSE_HOME%" ^
 			-Djetty.port=8282 ^
