@@ -14,9 +14,19 @@ import org.slf4j.LoggerFactory;
 public class TestSpringBundle implements Runnable {
 
     private static final Logger logger = LoggerFactory.getLogger(TestSpringBundle.class);
+    // default sleep time
+    private long sleepTime = 10000;
+
+    public long getSleepTime() {
+        return sleepTime;
+    }
+
+    public void setSleepTime(long sleepTime) {
+        this.sleepTime = sleepTime;
+    }
 
     public void init() {
-        logger.error("We are in the TestSpringBundle init : Spring has done its job");
+        logger.info("We are in the TestSpringBundle init : Spring has done its job");
         Thread thread = new Thread(this);
         thread.start();
     }
@@ -24,13 +34,13 @@ public class TestSpringBundle implements Runnable {
     public void run() {
         try {
             while (true) {
-                logger.error("The test Bundle is still running !");
+                logger.info("The test Bundle is still running !");
 
-                Thread.sleep(10000);
+                Thread.sleep(sleepTime);
             }
         } catch (InterruptedException ex) {
-            logger.error("Ein grosse error");
+            logger.info("Ein grosse error");
         }
-        logger.error("The test Bundle is now almost stoped");
+        logger.info("The test Bundle is now almost stoped");
     }
 }
