@@ -10,7 +10,7 @@
         <pack200 />
     </info>
     <guiprefs resizable="no" width="480" height="360">
-        <laf name="looks">
+        <laf name="liquid">
             <param name="variant" value="windows" />
             <os family="windows" />
         </laf>
@@ -25,7 +25,7 @@
         <panel classname="FinishPanel" />
     </panels>
     <packs>
-        <pack name="skeleton" required="yes" id="OSE">
+        <pack name="skeleton" preselected="yes" required="yes" id="OSE">
             <description>OSGI skeleton</description>
             <!-- Static files from the project -->
             <fileset dir="files"  targetdir="$INSTALL_PATH" />
@@ -38,7 +38,7 @@
             <!-- Bundle  Launcher -->
             <file targetdir="$INSTALL_PATH/system/launcher" src="${dependencies.dir}/BundleLauncher-1.1.0-SNAPSHOT.jar" />
         </pack>
-        <pack name="dependencies" required="yes" parent="OSE">
+        <pack name="dependencies" preselected="yes" required="yes" parent="OSE">
             <description>Mics Dependencies</description>
             <!-- Dependencies 6 -->
             <fileset targetdir="$INSTALL_PATH/system/dependencies/javax"
@@ -55,7 +55,7 @@
             <file targetdir="$INSTALL_PATH/system/dependencies/6" src="${dependencies.dir}/com.springsource.net.sf.cglib-2.2.0.jar" />
             <!-- Dependencies 7 -->
         </pack>
-        <pack name="Spring" required="yes" parent="OSE">
+        <pack name="Spring" preselected="yes" required="yes" parent="OSE">
             <description>Spring Bundles</description>
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.aop-${spring.framework.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.asm-${spring.framework.version}.jar" />
@@ -66,14 +66,14 @@
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.expression-${spring.framework.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.web-${spring.framework.version}.jar" />
         </pack>
-        <pack name="Jetty" required="yes" parent="OSE">
+        <pack name="Jetty" preselected="yes" required="yes" parent="OSE">
             <description>Jetty Bundles</description>
             <file targetdir="$INSTALL_PATH/system/jetty" src="${dependencies.dir}/com.springsource.org.mortbay.jetty.server-${jetty.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/jetty" src="${dependencies.dir}/com.springsource.org.mortbay.util-${jetty.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/jetty" src="${dependencies.dir}/jetty.web.extender.fragment.osgi-1.0.1.jar" />
             <file targetdir="$INSTALL_PATH/system/jetty/start" src="${dependencies.dir}/jetty.start.osgi-${jetty.run.version}.jar" />
         </pack>
-        <pack name="Extenders" required="yes" parent="OSE">
+        <pack name="Extenders" preselected="yes" required="yes" parent="OSE">
             <description>Spring OSGI Extenders</description>
             <file targetdir="$INSTALL_PATH/system/spring/start" src="${dependencies.dir}/org.springframework.osgi.extender-${spring.extender.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring/start" src="${dependencies.dir}/org.springframework.osgi.web.extender-${spring.extender.version}.jar" />
@@ -84,7 +84,7 @@
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.osgi.test-${spring.extender.version}.jar" />
             <file targetdir="$INSTALL_PATH/system/spring" src="${dependencies.dir}/org.springframework.osgi.web-${spring.extender.version}.jar" />
         </pack>
-        <pack name="Test" required="yes" parent="OSE">
+        <pack name="Test" preselected="yes" required="no" parent="OSE">
             <description>Just a Test</description>
             <file targetdir="$INSTALL_PATH/system/test" src="${dependencies.dir}/TestSpringBundle-1.0-SNAPSHOT.jar" />
             <fileset targetdir="$INSTALL_PATH/system/test"
