@@ -38,7 +38,7 @@
                         <configuration>
                             <encoding>UTF-8</encoding>
                             <izpackBasedir>${staging.dir}</izpackBasedir>
-                          <!--  <kind>web</kind>  -->
+                            <!--  <kind>web</kind>  -->
                         </configuration>
                     </execution>
                 </executions>
@@ -188,6 +188,11 @@
                 <enabled>true</enabled>
             </snapshots>
             <url>http://maven.springframework.org/osgi</url>
+        </repository>
+        <repository>
+            <id> tools-peppol.vservers.linagora.com</id>
+            <name>Some bundles are gone from the  (this will need to be removed one day)</name>
+            <url>http://tools-peppol.vservers.linagora.com/artifactory/remote-repos/</url>
         </repository>
     </repositories>
     <properties>
