@@ -6,10 +6,12 @@
     <bundles-folder folder="system/dependencies/8"/>
     <bundles-folder folder="system/dependencies/9"/>
     <bundles-folder folder="system/dependencies" />
-    <bundles-folder folder="system/spring"  />
-    <bundles-folder folder="system/jetty" />
+    <bundles-folder folder="system/spring"/>
+    <bundles-folder folder="system/jetty"/>
+    <bundles-folder folder="system/apachemq"/>
     <!-- Bundles to be Activated after load -->
-    <bundles-folder folder="system/jetty/start" start="true" />
-    <bundles-folder folder="system/spring/start" start="true" />
+    <bundles-folder folder="system/jetty/start" start="true"/>
+    <bundles-folder folder="system/apachemq/start" start="true"/>
+    <bundles-folder folder="system/spring/start" start="true"/>
     <bundles-folder folder="system/test" start="true" />
 </config>
